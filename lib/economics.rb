@@ -187,13 +187,13 @@ module Economics
     private
 
     def setup
-      self.e_fee      = fee.to_d / 100.00
-      self.e_rate     = rate.to_d / 100.00 / 12.0
-      self.e_amount   = e_amount.to_d
+      self.e_fee      = DecNum(fee) / 100.00
+      self.e_rate     = DecNum(rate) / 100.00 / 12.0
+      self.e_amount   = DecNum(e_amount)
+      self.p_amount   = DecNum(p_amount)
+      self.p_ps       = DecNum(ps) / 100.00
+      self.p_ir       = DecNum(ir) / 100.00
       self.e_duration = e_duration.to_i
-      self.p_amount   = p_amount.to_d
-      self.p_ps       = ps.to_d / 100.00
-      self.p_ir       = ir.to_d / 100.00
       self._cache     = Hash.new
     end
   end
