@@ -30,7 +30,7 @@ module Economics
 
     def cached method, index, &block
       _name = [method, index].join('-')
-      _cache[_name].presence || _cache[_name] = block.call
+      _cache[_name] ||= block.call
     end
 
     def amortized_for index
